@@ -1,0 +1,6 @@
+ private void setProgressDialog() {
+        pd = new ProgressDialog(MainActivity.this);
+        pd.setMessage("Yükleniyor...");
+        pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        pd.show();
+    }

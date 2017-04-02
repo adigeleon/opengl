@@ -1,0 +1,62 @@
+#include <Windows.h>
+#include<GL\glew.h>
+#include <iostream>
+#include <GL\freeglut.h>
+
+void init2D(float r, float g, float b) {
+	glClearColor(1.0, 1.0, 0.0, 0.0);
+	glMatrixMode(GL_PROJECTION);
+	gluOrtho2D(0.0, 200.0, 0.0, 150.0);
+}
+
+
+void init2D(float r, float g, float b) {
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	glMatrixMode(GL_PROJECTION);
+	gluOrtho2D(0.0, 200.0, 0.0, 150.0);
+}
+void display(void) {
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(1.0, 0.0, 1.0);
+	glPointSize(10.0f);
+	 //int p1[] = { 125,110 };
+	//int p2[] = { 90,50 };
+	//int p3[] = { 100,140 };
+	//int p4[] = { 125,50 };
+	//glRecti(100, 20, 40, 80);
+	int p1[] = { 20,60 };
+	int p2[] = { 40,20 };
+	int p3[] = { 80,20 };
+	int p4[] = { 100,60 };
+	int p5[] = { 80,100 };
+	int p6[] = { 40,100 };
+	//glBegin(GL_POLYGON);
+	//glBegin(GL_TRIANGLES);
+	glBegin(GL_TRIANGLE_STRIP);
+	glVertex2iv(p6);
+	glVertex2iv(p5);
+	glVertex2iv(p4);
+	glVertex2iv(p3);
+	glVertex2iv(p2);
+	glVertex2iv(p1);
+	
+	glEnd();
+	glFlush();
+	
+}
+
+void main(int argc, char *argv[]) {
+	glutInit(&argc, argv);
+	
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+	glutInitWindowPosition(100,100);
+	glutInitWindowSize(400, 300);
+	glutCreateWindow("hasim ilk ders");
+	init2D(0.0, 0.0, 0.0);
+	glutDisplayFunc(display);
+	
+	glutMainLoop();
+
+
+
+}

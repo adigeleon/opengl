@@ -1,0 +1,330 @@
+#include <Windows.h>
+#include<GL\glew.h>
+#include <iostream>
+#include <GL\freeglut.h>
+
+void init2D(float r, float g, float b) {
+	glClearColor(1.0, 1.0, 0.0, 0.0);
+	glMatrixMode(GL_PROJECTION);
+	gluOrtho2D(0.0, 200.0, 0.0, 150.0);
+}
+void display(void) {
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(1.0, 0.0, 0.0);
+	glPointSize(10.0f);
+	glBegin(GL_POINTS);
+	glVertex2i(25, 50);
+	glVertex2i(75, 100);
+	glVertex2i(125, 150);
+	glEnd();
+	
+	glBegin(GL_LINES);
+	glVertex2i(180, 15);
+	glVertex2i(10, 145);
+	glVertex2i(100, 250);
+	glEnd();
+	glFlush();
+	
+}
+
+void main(int argc, char *argv[]) {
+	glutInit(&argc, argv);
+	
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+	glutInitWindowPosition(500, 500);
+	glutInitWindowSize(400, 300);
+	glutCreateWindow("hasim ilk ders");
+	init2D(0.0, 0.0, 0.0);
+	glutDisplayFunc(display);
+	
+	glutMainLoop();
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+void init2D(float r, float g, float b) {
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+	glMatrixMode(GL_PROJECTION);
+	gluOrtho2D(0.0, 200.0, 0.0, 150.0);
+}
+void display(void) {
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(1.0, 0.0, 1.0);
+	glPointSize(10.0f);
+	 //int p1[] = { 125,110 };
+	//int p2[] = { 90,50 };
+	//int p3[] = { 100,140 };
+	//int p4[] = { 125,50 };
+	//glRecti(100, 20, 40, 80);
+	int p1[] = { 20,60 };
+	int p2[] = { 40,20 };
+	int p3[] = { 80,20 };
+	int p4[] = { 100,60 };
+	int p5[] = { 80,100 };
+	int p6[] = { 40,100 };
+	//glBegin(GL_POLYGON);
+	//glBegin(GL_TRIANGLES);
+	glBegin(GL_TRIANGLE_STRIP);
+	glVertex2iv(p6);
+	glVertex2iv(p5);
+	glVertex2iv(p4);
+	glVertex2iv(p3);
+	glVertex2iv(p2);
+	glVertex2iv(p1);
+	
+	glEnd();
+	glFlush();
+	
+}
+
+void main(int argc, char *argv[]) {
+	glutInit(&argc, argv);
+	
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+	glutInitWindowPosition(100,100);
+	glutInitWindowSize(400, 300);
+	glutCreateWindow("hasim ilk ders");
+	init2D(0.0, 0.0, 0.0);
+	glutDisplayFunc(display);
+	
+	glutMainLoop();
+
+
+
+}
+
+
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//Jeff Chastine
+#include <Windows.h>
+#include <GL\glew.h>
+#include <GL\freeglut.h>
+#include <iostream>
+
+
+void init2D(float r, float g, float b) {
+	glClearColor(1.0, 1.0, 0.0, 0.0);
+	glMatrixMode(GL_PROJECTION);
+	gluOrtho2D(0.0, 200.0, 0.0, 150.0);
+}
+void display(void) {
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(1.0, 0.0, 0.0);
+	glPointSize(10.0f);
+	glBegin(GL_LINES);
+	glVertex2i(125,90);
+	glVertex2i(65, 50);
+	glVertex2i(85, 110);
+	glVertex2i(125, 50);
+	glVertex2i(45, 90);
+	glEnd();
+	glBegin(GL_LINE_STRIP);
+	glVertex2i(20, 60);
+	glVertex2i(40, 20);
+	glVertex2i(80, 20);
+	glVertex2i(100,60 );
+	glVertex2i(80,100 );
+	glVertex2i(40, 100);
+	glEnd();
+	
+	glFlush();
+
+}
+
+void main(int argc, char *argv[]) {
+	glutInit(&argc, argv);
+
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+	glutInitWindowPosition(500, 500);
+	glutInitWindowSize(400, 300);
+	glutCreateWindow("hasim ilk ders");
+	init2D(0.0, 0.0, 0.0);
+	glutDisplayFunc(display);
+
+	glutMainLoop();
+
+
+
+}
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+glBegin(GL_POLYGON);
+	glVertex2i(20, 60);
+	glVertex2i(40, 20);
+	glVertex2i(80, 20);
+	glVertex2i(100,60 );
+	glVertex2i(80,100 );
+	glVertex2i(40, 100);
+	glEnd();
+	glBegin(GL_TRIANGLES);
+	glVertex2i(20, 60);
+	glVertex2i(40, 20);
+	glVertex2i(80, 20);
+	glVertex2i(100, 60);
+	glVertex2i(80, 100);
+	glVertex2i(40, 100);
+	glEnd();
+	glBegin(GL_TRIANGLE_STRIP);
+	glVertex2i(20, 60);
+	glVertex2i(40, 20);
+	glVertex2i(80, 20);
+	glVertex2i(100, 60);
+	glVertex2i(80, 100);
+	glVertex2i(40, 100);
+	glEnd();
+	glBegin(GL_TRIANGLE_FAN);
+	glVertex2i(20, 60);
+	glVertex2i(40, 20);
+	glVertex2i(80, 20);
+	glVertex2i(100, 60);
+	glVertex2i(80, 100);
+	glVertex2i(40, 100);
+	glEnd();
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+glClear(GL_COLOR_BUFFER_BIT);
+	glEnable(GL_LINE_STIPPLE);
+	glLineStipple(1, 0XC147);
+	glColor3f(1.0, 0.0, 0.0);
+	glPointSize(20.0f);
+	glBegin(GL_LINES);
+	glVertex2i(180, 15);
+	glVertex2i(10, 145);
+	glDisable(GL_LINE_STIPPLE);
+	glEnd();
+	glFlush();
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+glShadeModel(GL_SMOOTH);
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.0,0.0,1.0);
+	glVertex2i(50, 50);
+	glColor3f(1.0, 0.0, 0.0);
+	glVertex2i(150, 50);
+	glColor3f(0.0, 1.0, 0.0);
+	glVertex2i(75, 150);
+	glEnd();
+	glFlush();
+
+
+
+xxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+void init(void)
+
+{
+
+	glClearColor(1.0, 1.0, 1.0, 0.0);
+
+	glMatrixMode(GL_PROJECTION);
+
+	gluOrtho2D(0.0, 200.0, 0.0, 150.0);
+
+}
+
+
+
+
+
+
+
+void lineSegment(void)
+
+{
+
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	glColor3f(1.0, 0.0, 0.0);
+
+	glEnable(GL_LINE_STIPPLE);
+
+	glLineStipple(1, 0x1C47);
+
+	glBegin(GL_LINES);
+
+	glVertex2i(180, 15);
+
+	glVertex2i(10, 145);
+
+	glDisable(GL_LINE_STIPPLE);
+
+	glEnd();
+
+	glFlush();
+
+}
+
+
+
+
+void main(int argc, char** argv)
+
+{
+
+	glutInit(&argc, argv);
+
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+
+	glutInitWindowPosition(50, 100);
+
+	glutInitWindowSize(400, 300);
+
+	glutCreateWindow("An Example OpenGL Program");
+
+
+
+
+	init();
+
+
+
+
+	glutDisplayFunc(lineSegment);
+
+	glutMainLoop();
+
+}
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+void display(void) {
+	
+	int p1[] = { 20,60 };
+	int p2[] = { 40,20 };
+	int p3[] = { 80,20 };
+	int p4[] = { 100,60 };
+	int p5[] = { 80,100 };
+	int p6[] = { 40,100 };
+	glColor3f(0.0, 1.0, 0.0);
+	glPolygonMode(GL_FRONT, GL_FILL);
+	glBegin(GL_POLYGON);
+	glVertex2iv(p1);
+	glVertex2iv(p2);
+	glVertex2iv(p3);
+	glVertex2iv(p4);
+	glVertex2iv(p5);
+	glVertex2iv(p6);
+	glEnd();
+
+	glColor3f(1.0, 0.0, 0.0);
+	glPolygonMode(GL_FRONT, GL_LINE);
+	glBegin(GL_POLYGON);
+	glVertex2iv(p1);
+	glVertex2iv(p2);
+	glVertex2iv(p3);
+	glVertex2iv(p4);
+	glVertex2iv(p5);
+	glVertex2iv(p6);
+	glEnd();
+	glFlush();
